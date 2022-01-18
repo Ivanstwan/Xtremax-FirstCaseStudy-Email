@@ -1,0 +1,44 @@
+:root {
+  --sidebarColor: rgb(49, 53, 65);
+  --sidebarTextColor: rgb(130, 152, 160);
+}
+
+.sidebar {
+  /* width: 30vw; */
+  height: 100vw;
+}
+
+.sidebar-main {
+  height: 100%;
+  width: 120px;
+  background-color: var(--sidebarColor);
+}
+
+.sidebar-main-choice {
+  width: 120px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-main-choice.active {
+  background-color: rgb(114, 205, 210);
+  color: white;
+}
+
+.sidebar-main-choice-title {
+  font-size: 13px;
+  line-height: 12px;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  font-family: sans-serif;
+  color: var(--sidebarTextColor);
+  width: 80%;
+}
+
+.sidebar-main-choice-icon {
+  color: var(--sidebarTextColor);
+  font-size: 35px;
+  margin-bottom: 3px;
+}
