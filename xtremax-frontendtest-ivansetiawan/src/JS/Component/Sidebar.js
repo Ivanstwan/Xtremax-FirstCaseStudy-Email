@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../CSS/sidebar.css";
 // import png file
 import worldIcon from "../../IMG/world.png";
@@ -6,6 +6,7 @@ import singaporeIcon from "../../IMG/singapore.png";
 import videosIcon from "../../IMG/videos.png";
 import blogIcon from "../../IMG/blog.png";
 import aboutIcon from "../../IMG/about.png";
+import SecondarySidebar from "./SecondarySidebar";
 
 function Sidebar() {
   const [mainChoice, setMainChoice] = useState("Browse");
@@ -20,6 +21,32 @@ function Sidebar() {
   ];
 
   // Sidebar Secondary (e.g Merlion, Marina Bay Sands)
+  const [dataAttract, setDataAttract] = useState();
+  // reference for AJAX
+  // https://www.youtube.com/watch?v=wdvruTuWvW8
+  // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
+
+  useEffect(() => {
+    console.log("use effect");
+
+    let xhr = new XMLHttpRequest();
+
+    // GET JSON file from public folder
+    xhr.open("GET", "data/data.json", true);
+
+    xhr.responseType = "json";
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // console.log(xhr);
+        // console.log("success");
+        console.log(xhr.response);
+        setDataAttract(xhr.response);
+      }
+    };
+
+    xhr.send();
+  }, []);
 
   return (
     <div className="sidebar">
@@ -61,7 +88,7 @@ function Sidebar() {
           );
         })}
       </div>
-      <div className="sidebar-second"></div>
+      {dataAttract ? <SecondarySidebar dataAtt={dataAttract} /> : ""}
     </div>
   );
 }
