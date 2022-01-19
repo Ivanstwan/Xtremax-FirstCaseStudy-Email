@@ -1,26 +1,31 @@
 :root {
   --sidebarColor: rgb(49, 53, 65);
   --sidebarTextColor: rgb(130, 152, 160);
+  --sidebarTextColorActive: white;
 }
 
 .sidebar {
   /* width: 30vw; */
-  height: 100vw;
+  /* height: 100vw; */
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .sidebar-main {
-  height: 100%;
-  width: 120px;
+  height: 1000px;
+  width: 150px;
   background-color: var(--sidebarColor);
 }
 
 .sidebar-main-choice {
-  width: 120px;
-  height: 100px;
+  width: 100%;
+  height: 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid rgb(44, 49, 58);
 }
 .sidebar-main-choice.active {
   background-color: rgb(114, 205, 210);
@@ -28,17 +33,23 @@
 }
 
 .sidebar-main-choice-title {
-  font-size: 13px;
-  line-height: 12px;
-  letter-spacing: 0.1px;
+  font-size: 16px;
+  line-height: 15px;
   font-weight: 400;
-  font-family: sans-serif;
+  font-family: "Roboto";
   color: var(--sidebarTextColor);
   width: 80%;
+  margin-top: 4px;
+  height: 25px;
+  pointer-events: none;
+}
+.sidebar-main-choice-title.active {
+  color: var(--sidebarTextColorActive);
 }
 
 .sidebar-main-choice-icon {
   color: var(--sidebarTextColor);
   font-size: 35px;
   margin-bottom: 3px;
+  pointer-events: none;
 }

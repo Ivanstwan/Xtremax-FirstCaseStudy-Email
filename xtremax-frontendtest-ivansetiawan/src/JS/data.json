@@ -4,11 +4,7 @@
     "longitude": 103.85457,
     "place_name": "Merlion",
     "place_description": "",
-    "place_other_attraction": [
-      "Artscience Museum",
-      "Marina Bay Sands Skypark",
-      "Double Helix Bridge"
-    ]
+    "place_other_attraction": []
   },
   {
     "latitude": 1.287466,
@@ -50,7 +46,11 @@
     "longitude": 103.860295,
     "place_name": "Marina Bay Sands",
     "place_description": "",
-    "place_other_attraction": []
+    "place_other_attraction": [
+      "Artscience Museum",
+      "Marina Bay Sands Skypark",
+      "Double Helix Bridge"
+    ]
   },
   {
     "latitude": 1.28179,
