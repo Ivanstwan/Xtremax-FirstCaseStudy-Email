@@ -13,7 +13,7 @@ function GoogleMap() {
   });
 
   // State - current option selected (e.g Merlion)
-  const [selected, setSelected] = useState("Merlion");
+  const [selected, setSelected] = useState("");
 
   // State - store data from json file
   const [dataAttract, setDataAttract] = useState("");
@@ -52,13 +52,32 @@ function GoogleMap() {
           </div>
         </div>
         {/* Conditional Rendering */}
-        {/* 1. if  */}
+        {/* 1. if 'dataAttract' state already filled with data, then render (waiting for setState so not render undefined) */}
+        {/* 2. render condition, if 'selected' state is the same as place_name e.g 'Merlion' - className 'active' */}
         {dataAttract
           ? dataAttract.map((data) => {
-              return (
+              return data.place_name === selected ? (
                 <div className="gmap-sidebar-menu">
                   <div className="gmap-sidebar-menu-container">
-                    <div className="gmap-sidebar-menu-main">
+                    <div
+                      className="gmap-sidebar-menu-main active"
+                      onClick={() => {
+                        setSelected(data.place_name);
+                      }}
+                    >
+                      {data.place_name}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="gmap-sidebar-menu">
+                  <div className="gmap-sidebar-menu-container">
+                    <div
+                      className="gmap-sidebar-menu-main"
+                      onClick={() => {
+                        setSelected(data.place_name);
+                      }}
+                    >
                       {data.place_name}
                     </div>
                   </div>

@@ -10,6 +10,9 @@
   --secondarySidebarColor: rgb(40, 44, 55);
   --secondaryBorderColor: rgb(37, 41, 51);
   --secondaryMenuColor: white;
+  /* active - secondary menu */
+  --secondaryMenuColorActive: rgb(131, 192, 45);
+  --secondaryMenuBgColorActive: rgb(28, 31, 39);
 
   --gmapUpperbarBgColor: rgb(244, 247, 250);
   --gmapUpperbarColor: rgb(40, 44, 55);

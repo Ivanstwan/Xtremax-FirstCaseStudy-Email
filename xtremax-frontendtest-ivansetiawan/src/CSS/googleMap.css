@@ -64,9 +64,16 @@
   display: flex;
   align-items: center;
   padding-left: 35px;
+  background-color: transparent;
   color: var(--secondaryMenuColor);
   font-weight: 500;
   font-family: "Roboto";
+  transition: 300ms all ease-in-out;
+  cursor: pointer;
+}
+.gmap-sidebar-menu-main.active {
+  background-color: var(--secondaryMenuBgColorActive);
+  color: var(--secondaryMenuColorActive);
 }
 
 /* 2. Google Map and Upper Bar */
