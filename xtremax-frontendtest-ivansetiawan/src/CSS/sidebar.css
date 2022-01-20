@@ -2,6 +2,18 @@
   --sidebarColor: rgb(49, 53, 65);
   --sidebarTextColor: rgb(130, 152, 160);
   --sidebarTextColorActive: white;
+  --sidebarBorderColor: rgb(45, 49, 60);
+
+  --borderColor: rgb(32, 35, 44);
+
+  --secondarySidebarTextColor: rgb(103, 121, 129);
+  --secondarySidebarColor: rgb(40, 44, 55);
+  --secondaryBorderColor: rgb(37, 41, 51);
+  --secondaryMenuColor: white;
+
+  --gmapUpperbarBgColor: rgb(244, 247, 250);
+  --gmapUpperbarColor: rgb(40, 44, 55);
+  --gmapUpperbarIconColor: rgb(100, 125, 128);
 }
 
 .sidebar {
@@ -25,7 +37,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgb(44, 49, 58);
+  border-bottom: 1px solid var(--sidebarBorderColor);
 }
 .sidebar-main-choice.active {
   background-color: rgb(114, 205, 210);

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+/* body {
+  width: calc(100vw - (100vw - 100%));
+} */
+
 .App {
   text-align: center;
 }

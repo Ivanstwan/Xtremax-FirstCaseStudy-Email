@@ -1,0 +1,108 @@
+.gmap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 1. Sidebar Google Map */
+/* 1.1 sidebar title */
+.gmap-sidebar-second {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondarySidebarColor);
+  border: 1px solid var(--secondaryBorderColor);
+}
+
+.gmap-sidebar-filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  height: 40px;
+  margin: 42.5px 0;
+  padding: 0 25px;
+  border: 1px solid var(--borderColor);
+}
+
+.gmap-sidebar-filter-text {
+  color: var(--secondarySidebarTextColor);
+  font-size: 17px;
+  line-height: 15px;
+  font-weight: 600;
+}
+
+.gmap-sidebar-filter-icon {
+  color: var(--secondarySidebarTextColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scaleY(1.5);
+  padding-bottom: 5px;
+}
+
+/* 1.2 sidebar menu */
+.gmap-sidebar-menu {
+  width: 350px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gmap-sidebar-menu-container {
+  padding: 10px 0;
+  border-top: 1px solid var(--secondaryBorderColor);
+  border-bottom: 1px solid var(--secondaryBorderColor);
+}
+
+.gmap-sidebar-menu-main {
+  width: 300px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  color: var(--secondaryMenuColor);
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+/* 2. Google Map and Upper Bar */
+/* 2.1 Gmap Upperbar */
+.gmap-upperbar {
+  position: relative;
+  width: calc(100vw - 500px - var(--scrollbarWidth));
+  height: 125px;
+  background-color: var(--gmapUpperbarBgColor);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 55px 0 50px;
+}
+
+.gmap-upperbar-title {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--gmapUpperbarColor);
+}
+
+.gmap-upperbar-icon-container {
+  font-size: 31px;
+  color: var(--gmapUpperbarIconColor);
+}
+
+.gmap-upperbar-icon-container .fas {
+  margin-left: 20px;
+}
+
+/* 2.2 Gmap */
+.gmap-container {
+  position: relative;
+  width: calc(100vw - 500px - var(--scrollbarWidth));
+  height: calc(1000px - 125px);
+}
