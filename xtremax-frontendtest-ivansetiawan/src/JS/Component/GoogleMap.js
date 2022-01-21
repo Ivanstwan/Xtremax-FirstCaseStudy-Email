@@ -68,8 +68,24 @@ function GoogleMap() {
                         setSelected(data.place_name);
                       }}
                     >
-                      {data.place_name}
+                      {data.place_other_attraction[0] ? (
+                        <>
+                          <div className="gmap-sidebar-menu-main-container">
+                            <div>{data.place_name}</div>
+                            <i className="fas fa-sort-down" />
+                          </div>
+                        </>
+                      ) : (
+                        <div>{data.place_name}</div>
+                      )}
                     </div>
+                    {data.place_other_attraction.map((dat) => {
+                      return (
+                        <div className="gmap-sidebar-menu-main-mini-location">
+                          {dat}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               ) : (
@@ -79,9 +95,24 @@ function GoogleMap() {
                       className="gmap-sidebar-menu-main"
                       onClick={() => {
                         setSelected(data.place_name);
+
+                        setDefaultGmap({
+                          center: {
+                            lat: data.latitude,
+                            lng: data.longitude,
+                          },
+                          zoom: 17,
+                        });
                       }}
                     >
-                      {data.place_name}
+                      {data.place_other_attraction[0] ? (
+                        <div className="gmap-sidebar-menu-main-container">
+                          <div>{data.place_name}</div>
+                          <i className="fas fa-sort-down" />
+                        </div>
+                      ) : (
+                        <div>{data.place_name}</div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -172,9 +203,30 @@ function GoogleMap() {
               {
                 return data.place_name === selected ? (
                   <div className="popup">
-                    <div className="popup-img"></div>
+                    <div className="popup-img-container">
+                      <img src={data.image_src} className="popup-img" />
+                    </div>
                     <div className="popup-title">{data.place_name}</div>
-                    <div className="popup-desc">{data.place_description}</div>
+                    <div className="popup-desc-container">
+                      <div className="popup-desc">
+                        {data.place_description[0]}
+                      </div>
+                      <div className="popup-desc-two">
+                        {data.place_description[1]}
+                      </div>
+                      <div className="popup-desc-location">
+                        <i className="fas fa-map-marker-alt" />
+                        <div className="popup-desc-location-text">
+                          {data.place_description[2]}
+                        </div>
+                      </div>
+                      <div className="popup-desc-web">
+                        <i className="fas fa-globe-asia" />
+                        <div className="popup-desc-web-text">
+                          {data.place_description[3]}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   ""
